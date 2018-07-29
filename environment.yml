@@ -9,3 +9,6 @@ dependencies:
   - pandas
   - bokeh
   - ipyvolume
+  - IPython
+  - ipywidgets
+  - jupyter_contrib_nbextensions
