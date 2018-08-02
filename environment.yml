@@ -12,3 +12,6 @@ dependencies:
   - IPython
   - ipywidgets
   - jupyter_contrib_nbextensions
+  - ipympl
+  - nodejs
+
