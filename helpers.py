@@ -22,7 +22,6 @@ def evaluate_field_components(A, field, X, Y, Z):
     c_eval = {}     
     vars = symbols('A.x A.y A.z')  # this is to fix a lambdify "bug" 
     for c in field.components:
-        print(c)
         l_func = lambdify(vars, field.components[c].subs(dict(zip([A.x, A.y, A.z], vars))), modules='numpy')
         c_eval[c] = l_func(X,Y,Z)
     return (c_eval[A.i], c_eval[A.j], c_eval[A.k])
