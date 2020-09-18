@@ -1,0 +1,76 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "PHYS341, F2019, Day #2\n",
+    "\n",
+    "IPython Notebook to visualize a surface. We use the example:\n",
+    "\\begin{equation} \n",
+    "z = x^2 + y^2\n",
+    "\\end{equation}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%matplotlib notebook\n",
+    "import numpy as np\n",
+    "from mpl_toolkits.mplot3d import Axes3D  \n",
+    "# Axes3D import adds feature, it enables using projection='3d' in add_subplot\n",
+    "import matplotlib.pyplot as plt\n",
+    "import random\n",
+    "\n",
+    "def fun(x, y):\n",
+    "    return x**2 + y**2\n",
+    "\n",
+    "fig = plt.figure()\n",
+    "ax = fig.add_subplot(111, projection='3d')\n",
+    "x = y = np.arange(-3.0, 3.0, 0.05)\n",
+    "X, Y = np.meshgrid(x, y)\n",
+    "zs = np.array(fun(np.ravel(X), np.ravel(Y)))\n",
+    "Z = zs.reshape(X.shape)\n",
+    "\n",
+    "ax.plot_surface(X, Y, Z)\n",
+    "\n",
+    "ax.set_xlabel('X')\n",
+    "ax.set_ylabel('Y')\n",
+    "ax.set_zlabel('Z')\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
